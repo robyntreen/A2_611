@@ -54,34 +54,34 @@ public class Frontend611 extends JFrame {
         listPartsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                listParts();
+                listParts611();
             }
         });
 
         listPOsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                listPOs();
+                listPOs611();
             }
         });
 
         poDetailsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                viewPODetails();
+                viewPODetails611();
             }
         });
 
         submitPOButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                submitPO();
+                submitPO611();
             }
         });
     }
 
     // Backend method calls for listing parts
-    private void listParts() {
+    private void listParts611() {
         try {
             String partsList = DBOperations611.listParts611(); // Call backend
             outputArea.setText(partsList);
@@ -91,7 +91,7 @@ public class Frontend611 extends JFrame {
     }
 
     // Backend method calls for listing POs
-    private void listPOs() {
+    private void listPOs611() {
         try {
             String poList = DBOperations611.listPOs611(); // Call backend
             outputArea.setText(poList);
@@ -101,7 +101,7 @@ public class Frontend611 extends JFrame {
     }
 
     // Fetch details for a specific PO
-    private void viewPODetails() {
+    private void viewPODetails611() {
         try {
             int poNumber = Integer.parseInt(poNumberField.getText());
             String poDetails = DBOperations611.listPOinfo611(poNumber); // Call backend
@@ -114,7 +114,7 @@ public class Frontend611 extends JFrame {
     }
 
     // Submit a new purchase order
-    private void submitPO() {
+    private void submitPO611() {
         // Prompt a simple PO creation dialog (in a real-world scenario this would involve more fields)
         try {
             // Dummy submission - ideally, you'd gather partNo, qtyOrdered from a form
